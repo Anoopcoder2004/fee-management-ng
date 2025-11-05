@@ -5,10 +5,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px 0 250px; /* space for sidebar */
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 83%;
   z-index: 10;
   transition: all 0.3s ease;
 }

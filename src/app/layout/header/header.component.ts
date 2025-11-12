@@ -8,9 +8,8 @@ import { Component,Output,EventEmitter } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  @Output() sidebarToggle = new EventEmitter<void>();
+  @Output() menuClick = new EventEmitter<void>();
 
-  toggleSidebar() {
-    this.sidebarToggle.emit();
-  }
+
+  
 }

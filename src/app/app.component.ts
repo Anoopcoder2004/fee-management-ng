@@ -12,4 +12,9 @@ import { HeaderComponent } from './layout/header/header.component';
 })
 export class AppComponent {
   title = 'fee-management-ui';
+ isSidebarOpen = true;
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
 }

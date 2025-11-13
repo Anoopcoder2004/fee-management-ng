@@ -6,10 +6,18 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [SidebarComponent,HeaderComponent,RouterOutlet],
+  imports: [SidebarComponent, HeaderComponent, RouterOutlet],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss'
 })
 export class LayoutComponent {
+  title = 'fee-management-ui';
+  isSidebarOpen = true;
 
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
 }
+
+
+

@@ -1,9 +1,17 @@
 import { Routes } from '@angular/router';
-import { MemberComponent } from './modules/member/member.component';
-import { AppComponent } from './app.component';
+import { LayoutComponent } from './layout/layout/layout.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './modules/login/login.component';
 
 export const routes: Routes = [
-    { path: '', component: AppComponent },
-    { path: 'members', component: MemberComponent }
-
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent }
+    ]
+  },
+  { path: 'login', component: LoginComponent } // future layout-free route
 ];
+

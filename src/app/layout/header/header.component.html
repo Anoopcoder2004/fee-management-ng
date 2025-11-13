@@ -1,6 +1,12 @@
 <div class="header">
-  <button class="menu-btn" (click)="menuClick.emit()">
-    ☰
-  </button>
-  <h1>Gym Manager</h1>
+  <div class="header-left">
+    <button class="menu-toggle" (click)="menuClick.emit()">☰</button>
+    <h1>Client Manager</h1>
+  </div>
+
+  <div class="header-right">
+    <div class="user-profile">
+      <img src="assets/images/user.png" alt="User Profile"/>
+    </div>
+  </div>
 </div>

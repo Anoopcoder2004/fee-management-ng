@@ -11,3 +11,7 @@ html, body {
   width: 100%;
   overflow-x: hidden;
 }
+a {
+  text-decoration: none; /* remove underline */
+  color: inherit;        /* keep font color same as parent */
+}

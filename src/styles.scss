@@ -15,3 +15,7 @@ a {
   text-decoration: none; /* remove underline */
   color: inherit;        /* keep font color same as parent */
 }
+.row{
+      --bs-gutter-x: 0; //remove overlapping of <div class = row> and sidebar
+
+}

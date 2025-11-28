@@ -1,34 +1,67 @@
-<div class="members-container">
-  <h2>Gym Members</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Plan</th>
-        <th>Join Date</th>
-        <th>Status</th>
-        <th>Fee Paid (₹)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let member of paginatedMembers">
-        <td>{{ member.id }}</td>
-        <td>{{ member.name }}</td>
-        <td>{{ member.plan }}</td>
-        <td>{{ member.joinDate }}</td>
-        <td [class.active]="member.status === 'Active'"
-            [class.inactive]="member.status === 'Inactive'">
-          {{ member.status }}
-        </td>
-        <td>{{ member.feePaid }}</td>
-      </tr>
-    </tbody>
-  </table>
+<button class="btn btn-primary">Primary</button>
 
-  <div class="pagination">
-    <button (click)="prevPage()" [disabled]="currentPage === 1">Prev</button>
-    <span>Page {{ currentPage }} of {{ totalPages }}</span>
-    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="dashboard-container">
+      <div class=" mt-4 summary-section">
+        <h3>Members</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Client Name</th>
+              <th>Plan</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rahul Nair</td>
+              <td>3 Months</td>
+              <td>₹4,500</td>
+              <td><span class="status paid">Paid</span></td>
+            </tr>
+            <tr>
+              <td>Arun Menon</td>
+              <td>1 Month</td>
+              <td>₹1,800</td>
+              <td><span class="status due">Due</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="dashboard-container">
+      <div class=" mt-4 summary-section">
+        <h3>Members</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Client Name</th>
+              <th>Plan</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rahul Nair</td>
+              <td>3 Months</td>
+              <td>₹4,500</td>
+              <td><span class="status paid">Paid</span></td>
+            </tr>
+            <tr>
+              <td>Arun Menon</td>
+              <td>1 Month</td>
+              <td>₹1,800</td>
+              <td><span class="status due">Due</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
+<button class="btn btn-primary">Primary</button>

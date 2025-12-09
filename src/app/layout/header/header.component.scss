@@ -35,3 +35,21 @@ button {
   color: rgb(0, 0, 0);
   cursor: pointer;
 }
+
+/* Hide hamburger by default (desktop) */
+.hamburger-btn {
+  display: none;
+}
+
+/* Show hamburger only on mobile (< 768px) */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: inline-block;
+  }
+}
+.user-profile img {
+  width: 35px;   // adjust as you like
+  height: 35px;  // keep square so the image doesn't stretch
+  border-radius: 50%; // optional (makes it round)
+  object-fit: cover;
+}

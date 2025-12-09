@@ -1,121 +1,41 @@
-// .members-container {
-//   background-color: #0d0d0d;
-//   color: #fff;
-//   padding: 20px;
-//   border-radius: 10px;
-//   box-shadow: 0 0 10px rgba(255, 215, 0, 0.15);
-//   font-family: "Roboto", sans-serif;
-// }
-
-// .members-container h2 {
-//   color: #FFD700;
-//   font-weight: 700;
-//   text-align: center;
-//   margin-bottom: 20px;
-//   letter-spacing: 1px;
-// }
-
-/* Table Styling */
-// table {
-//   width: 100%;
-//   border-collapse: collapse;
-//   background-color: #1a1a1a;
-//   border-radius: 10px;
-//   overflow: hidden;
-//   box-shadow: 0 2px 6px rgba(255, 215, 0, 0.1);
-// }
-
-// thead {
-//   background-color: #FFD700;
-//   color: #000;
-// }
-
-// th, td {
-//   padding: 12px 14px;
-//   text-align: left;
-//   font-size: 0.95rem;
-// }
-
-// th {
-//   font-weight: 700;
-//   text-transform: uppercase;
-// }
-
-// tbody tr:nth-child(even) {
-//   background-color: #141414;
-// }
-
-// tbody tr:hover {
-//   background-color: #222;
-//   transition: 0.3s ease;
-// }
-
-// /* Status Styling */
-// td.active {
-//   color: #000;
-//   background-color: #FFD700;
-//   font-weight: 600;
-//   text-align: center;
-//   border-radius: 5px;
-// }
-
-// td.inactive {
-//   color: #fff;
-//   background-color: #ff4747;
-//   font-weight: 600;
-//   text-align: center;
-//   border-radius: 5px;
-// }
-
-// /* Pagination */
-// .pagination {
-//   margin-top: 20px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 12px;
-// }
-
-// .pagination button {
-//   background-color: #FFD700;
-//   color: #000;
-//   border: none;
-//   padding: 8px 14px;
-//   border-radius: 5px;
-//   font-weight: 600;
-//   cursor: pointer;
-//   transition: 0.3s ease;
-// }
-
-// .pagination button:hover:not(:disabled) {
-//   background-color: #e6c300;
-// }
-
-// .pagination button:disabled {
-//   opacity: 0.5;
-//   cursor: not-allowed;
-// }
-
-// .pagination span {
-//   color: #fff;
-//   font-weight: 500;
-// }
-
-//table styles
 .dashboard-container {
-  padding: 24px;
+  padding: 35px;
   background-color: #fff;
   min-height: 100vh;
   color: #222;
   font-family: "Poppins", sans-serif;
 }
+
+
+//table styles
 .summary-section h3 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 12px;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
 
+th,
+td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+th {
+  background-color: #000;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
 
 .status {
   padding: 4px 10px;

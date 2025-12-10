@@ -1,14 +1,13 @@
 <div class="login-container">
     <div class="login-card">
         <h2>Admin Login</h2>
-
+        
         <form (ngSubmit)="login()">
             <!-- Username Field -->
             <div class="form-group">
                 <label>Username</label>
                 <input type="text" [(ngModel)]="username" name="username" required />
             </div>
-
             <!-- Password Field with Eye Button -->
             <div class="form-group password-group">
                 <label>Password</label>

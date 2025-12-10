@@ -1,9 +1,29 @@
 <div class="layout">
+
   <app-sidebar [isOpen]="isSidebarOpen" class="sidebar"></app-sidebar>
+
   <div class="main">
-    <app-header (menuClick)="toggleSidebar()" class="header"></app-header>
-    <div class="content">
+
+    <!-- ONLY ONE HEADER -->
+    <app-header 
+        (menuClick)="toggleSidebar()"
+        (profileClick)="openProfileModal()"
+        class="header">
+    </app-header>
+
+    <div class="main-content">
+
+      <!-- Modal placed above content so it floats -->
+      <app-edit-profile
+        [isOpen]="isProfileModalOpen"
+        (close)="closeProfileModal()">
+      </app-edit-profile>
+
+      <!-- Routed pages -->
       <router-outlet></router-outlet>
+
     </div>
+
   </div>
+
 </div>

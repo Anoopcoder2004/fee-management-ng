@@ -23,5 +23,16 @@ export class MemberComponent {
   constructor() {
   }
 
+  showModal = false;
+
+openModal() {
+  this.showModal = true;
+}
+
+closeModal() {
+  this.showModal = false;
+}
+
+
  
 }

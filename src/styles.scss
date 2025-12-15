@@ -18,3 +18,75 @@ a {
       --bs-gutter-x: 0; //remove overlapping of <div class = row> and sidebar
 
 }
+/* Global border radius for all buttons */
+button {
+  border-radius: 8px !important; /* override any other button styles */
+}
+
+/* Global border radius for all tables */
+table {
+  width: 100% !important;
+  border-radius: 8px !important;
+}
+/* Wrapper for rounded table corners */
+.table-wrapper {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  border: 1px solid #ccc; /* optional table border */
+
+}
+
+/* Table inside wrapper */
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse; /* collapse inner borders */
+}
+
+/* Table header styling */
+.table-wrapper thead {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.table-wrapper thead tr th:first-child {
+  border-top-left-radius: 8px !important;
+}
+
+.table-wrapper thead tr th:last-child {
+  border-top-right-radius: 8px !important;
+}
+
+/* Rounded bottom corners for last row */
+.table-wrapper tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px !important;
+}
+
+.table-wrapper tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px !important;
+}
+
+/* Row hover effect: black background with white text */
+.table-wrapper tbody tr:hover {
+  background-color: #000000; /* black background */
+  color: #ffffff; /* white text */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Make status inside rows change color on hover too */
+.table-wrapper tbody tr:hover .status {
+  color: #ffffff !important;
+}
+
+/* Optional: spacing inside cells */
+.table-wrapper td,
+.table-wrapper th {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.btn-black {
+  background-color: #000000; /* pure black */
+  color: #ffffff; /* white text */
+  font-weight: bold;
+}

@@ -106,9 +106,15 @@ input, select {
 
 .submit-btn {
   background: black;
-  color: #FFD700;
+  color: #ffffff;
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
 }
+.btn-black {
+  background-color: #000000; /* pure black */
+  color: #ffffff; /* white text */
+  font-weight: bold;
+}
+

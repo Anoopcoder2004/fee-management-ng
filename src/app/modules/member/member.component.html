@@ -3,9 +3,9 @@
     <h3>Fee Summary</h3>
 
     <!-- Add Member Button -->
-    <button (click)="openModal()">Add Member</button>
+    <button class="btn btn-black mb-2 " (click)="openModal()">Add Member</button>
 
-    <table>
+    <table class="table-wrapper">
       <thead>
         <tr>
           <th>Client Name</th>
@@ -33,8 +33,8 @@
 </div>
 
 <!-- MODAL -->
-<div class="modal" [class.show]="showModal">
-  <div class="modal-content">
+<div class="modal" [class.show]="showModal" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
     <span class="close" (click)="closeModal()">&times;</span>
 
     <h2>Add Member</h2>
@@ -57,3 +57,4 @@
     </form>
   </div>
 </div>
+

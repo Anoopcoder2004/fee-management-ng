@@ -1,14 +1,14 @@
 <div class="layout">
 
   <app-sidebar [isOpen]="isSidebarOpen" class="sidebar" [class.active]="isSidebarOpen"></app-sidebar>
-
+<div class="overlay" *ngIf="isSidebarOpen" (click)="closeSidebar()">
+    </div>
   <div class="main">
 
     <!-- ONLY ONE HEADER -->
     <app-header (menuClick)="toggleSidebar()" (profileClick)="openProfileModal()" class="header">
     </app-header>
-    <div class="overlay" *ngIf="isSidebarOpen" (click)="closeSidebar()">
-    </div>
+    
 
     <div class="main-content">
 

@@ -13,21 +13,19 @@ import { EditProfileComponent } from '../../edit-profile/edit-profile.component'
 })
 export class LayoutComponent {
   title = 'fee-management-ui';
-  isSidebarOpen = true;
+  isSidebarOpen = false;
 
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
+    closeSidebar() {
+    this.isSidebarOpen = false;
+  }
 
-//   isProfileModalOpen = false;
+  closeSidebarOnItemClick() {
+    this.isSidebarOpen = false;
+  }
 
-// openProfileModal() {
-//   this.isProfileModalOpen = true;
-// }
-
-// closeProfileModal() {
-//   this.isProfileModalOpen = false;
-// }
 
   isProfileModalOpen = false;
 

@@ -9,4 +9,110 @@
     z-index: 9999;
     top: 12%;
     left: 88%;
+}/* Overlay */
+.profile-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: 1000;
+}
+
+/* Menu box */
+.profile-menu {
+  position: absolute;
+  top: 70px;
+  right: 25px;
+  width: 260px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  padding: 16px;
+  animation: scaleIn 0.15s ease-in-out;
+}
+
+/* Header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Avatar */
+.avatar {
+  width: 48px;
+  height: 48px;
+  background: #ffd400;
+  color: #000;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+
+/* User info */
+.user-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.user-info .role {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 14px 0;
+}
+
+/* Buttons */
+.menu-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Logout */
+.menu-btn.logout {
+  background: #000;
+  color: #ffd400;
+}
+
+.menu-btn.logout:hover {
+  background: #ffd400;
+  color: #000;
+}
+
+/* Close */
+.menu-btn.close {
+  margin-top: 8px;
+  background: #f2f2f2;
+  color: #333;
+}
+
+.menu-btn.close:hover {
+  background: #ddd;
+}
+
+/* Animation */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

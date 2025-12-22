@@ -1,6 +1,5 @@
 .settings-container {
   background-color: #0f0f0f;
-  min-height: 100vh;
   padding: 24px;
   color: #fff;
 }
@@ -85,4 +84,8 @@
   &:hover {
     background-color: #991b1b;
   }
+}
+.main-content {
+  flex: 1;
+  overflow-y: auto;
 }

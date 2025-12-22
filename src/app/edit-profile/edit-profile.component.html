@@ -1,26 +1,31 @@
-  <!-- <div class="profile-modal" *ngIf="isProfileModalOpen">
-  <h3>User Profile</h3>
-
-  <div class="profile-info">
-    <p><strong>Name:</strong> Anoop</p>
-    <p><strong>Role:</strong> Admin</p>
-  </div>
-
-  <button class="logout-btn">Logout</button>
-  <button class="close-btn" (click)="closeProfileModal()">Close</button>
-</div> -->
-<div class="profile-modal-wrapper" *ngIf="isOpen" (click)="closeOnOutside($event)">
+<div class="profile-overlay" *ngIf="isOpen" (click)="closeOnOutside($event)">
   
-  <div class="profile-modal" (click)="$event.stopPropagation()">
-    <h3>User Profile</h3>
-
-    <div class="profile-info">
-      <p><strong>Name:</strong> Anoop</p>
-      <p><strong>Role:</strong> Admin</p>
+  <div class="profile-menu" (click)="$event.stopPropagation()">
+    
+    <!-- Header -->
+    <div class="profile-header">
+      <div class="avatar">
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="user-info">
+        <h4>Anoop</h4>
+        <span class="role">Admin</span>
+      </div>
     </div>
 
-    <button class="logout-btn">Logout</button>
-    <button class="close-btn" (click)="closeProfileModal()">Close</button>
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Actions -->
+    <button class="menu-btn logout">
+      <i class="fa fa-sign-out-alt"></i>
+      Logout
+    </button>
+
+    <button class="menu-btn close" (click)="closeProfileModal()">
+      Close
+    </button>
+
   </div>
 
 </div>

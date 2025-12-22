@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -6,9 +6,14 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss'
+  styleUrls: ['./sidebar.component.scss']  // ✅ correct property name
 })
 export class SidebarComponent {
-    @Input() isOpen = false;
+  @Input() isOpen = false;
+  @Output() menuClick = new EventEmitter<void>();
 
+  // Optional: helper method to emit menu click
+  onMenuItemClick() {
+    this.menuClick.emit();
+  }
 }

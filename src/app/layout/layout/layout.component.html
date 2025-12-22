@@ -1,22 +1,19 @@
 <div class="layout">
 
-  <app-sidebar [isOpen]="isSidebarOpen" class="sidebar"></app-sidebar>
+  <app-sidebar [isOpen]="isSidebarOpen" class="sidebar" [class.active]="isSidebarOpen"></app-sidebar>
 
   <div class="main">
 
     <!-- ONLY ONE HEADER -->
-    <app-header 
-        (menuClick)="toggleSidebar()"
-        (profileClick)="openProfileModal()"
-        class="header">
+    <app-header (menuClick)="toggleSidebar()" (profileClick)="openProfileModal()" class="header">
     </app-header>
+    <div class="overlay" *ngIf="isSidebarOpen" (click)="closeSidebar()">
+    </div>
 
     <div class="main-content">
 
       <!-- Modal placed above content so it floats -->
-      <app-edit-profile
-        [isOpen]="isProfileModalOpen"
-        (close)="closeProfileModal()">
+      <app-edit-profile [isOpen]="isProfileModalOpen" (close)="closeProfileModal()">
       </app-edit-profile>
 
       <!-- Routed pages -->

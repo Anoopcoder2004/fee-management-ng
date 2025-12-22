@@ -3,7 +3,6 @@
   display: flex;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
 }
 
 /* Sidebar styles */
@@ -24,6 +23,7 @@
   display: flex;
   flex-direction: column;
   background: #f7f7f7;
+  overflow:hidden;
 }
 
 .header {
@@ -34,20 +34,26 @@
   align-items: center;
   padding: 0 1rem;
   font-weight: bold;
+  z-index:1000;
 }
 
 /* Small screen: hide sidebar by default */
 @media (max-width: 768px) {
   .sidebar {
     position: fixed;
-    top: 0;
+    top: 60px;
     left: 0;
     height: 100%;
-    z-index: 1000;
+    z-index: 900;
     transform: translateX(-100%);
   }
 
   .sidebar.active {
     transform: translateX(0);
   }
+}
+  .main-content {
+  flex: 1;
+  overflow-y: auto !important ;   /* ✅ SCROLL HERE */
+  overflow-x: hidden;
 }

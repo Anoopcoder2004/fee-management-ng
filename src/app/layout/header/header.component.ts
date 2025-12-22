@@ -11,31 +11,14 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
 
-
-
   @Output() menuClick = new EventEmitter<void>();
-
-
-    @Output() profileClick = new EventEmitter<void>();
+  @Output() profileClick = new EventEmitter<void>();
 
   openProfile() {
     this.profileClick.emit();
   }
-//   //open modal on profile click
-//   @Output() profileClick = new EventEmitter<void>();
-
-// openProfileModal() {
-//   this.profileClick.emit();
-// }
-
-
-
-  // isProfileModalOpen: boolean = false;
-  // openProfileModal() {
-  //   this.isProfileModalOpen = true;
-  //   console.log("Modal opened");
-  // }
-  // closeProfileModal(){
-  //   this.isProfileModalOpen = false;
-  // }
+  onMenuClick(){
+    this.menuClick.emit();
+    console.log("hamburger icon clicked")
+  }
 }

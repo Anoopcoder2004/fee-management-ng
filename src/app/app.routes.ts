@@ -6,6 +6,7 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { LoginComponent } from './modules/login/login.component';
 import { authGuard } from './guards/auth.guard'; 
 import { SettingsComponent } from './modules/settings/settings.component'; 
+import { PaymentComponent } from './modules/payment/payment.component';
 
 export const routes: Routes = [
   // Login route (layout-free)
@@ -21,9 +22,9 @@ export const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'member', component: MemberComponent },
       { path: 'coming-soon', component: ComingSoonComponent },
-      { path: 'settings',component:SettingsComponent }
+      { path: 'settings',component:SettingsComponent },
+      { path: 'payment',component:PaymentComponent}
       
-      // payments, settings etc.
     ]
   },
 

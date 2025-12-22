@@ -1,0 +1,52 @@
+.coming-soon-container {
+  height: 100vh;
+  width: 100%;
+  background: #000; /* black theme */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  text-align: center;
+  background: #111;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #f4c20d44; /* soft yellow glow */
+  border: 2px solid #f4c20d; /* yellow border */
+}
+
+.title {
+  color: #f4c20d;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.loader {
+  border: 5px solid #333;
+  border-top: 5px solid #f4c20d; /* yellow */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  animation: spin 1s linear infinite;
+}
+
+.footer-text {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #888;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

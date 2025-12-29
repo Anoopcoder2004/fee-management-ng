@@ -1,30 +1,36 @@
 <div class="login-container">
-    <div class="login-card">
-        <h2>Admin Login</h2>
-        
-        <form (ngSubmit)="login()">
-            <!-- Username Field -->
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" [(ngModel)]="username" name="username" required />
-            </div>
-            <!-- Password Field with Eye Button -->
-            <div class="form-group password-group">
-                <label>Password</label>
-                <div class="password-wrapper">
-                    <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" name="password"
-                        required />
-                    <button type="button" class="eye-btn" (click)="togglePassword()">
-                        <i class="fa-solid" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
-                    </button>
-                </div>
-            </div>
+  <div class="login-card">
+    <h2>{{ isLoginMode ? 'Admin Login' : 'Admin Register' }}</h2>
 
-            <!-- Error Message -->
-            <div class="error" *ngIf="error">{{ error }}</div>
+    <!-- Toggle Links -->
+    <p class="toggle-text">
+      {{ isLoginMode ? "Don't have an account?" : "Already have an account?" }}
+      <a (click)="toggleMode()">{{ isLoginMode ? 'Register' : 'Login' }}</a>
+    </p>
 
-            <!-- Submit Button -->
-            <button type="submit">Login</button>
-        </form>
-    </div>
+    <form (ngSubmit)="isLoginMode ? login() : register()">
+      <!-- Username Field -->
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" [(ngModel)]="username" name="username" required />
+      </div>
+
+      <!-- Password Field with Eye Button -->
+      <div class="form-group password-group">
+        <label>Password</label>
+        <div class="password-wrapper">
+          <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" name="password" required />
+          <button type="button" class="eye-btn" (click)="togglePassword()">
+            <i class="fa-solid" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Error Message -->
+      <div class="error" *ngIf="error">{{ error }}</div>
+
+      <!-- Submit Button -->
+      <button type="submit">{{ isLoginMode ? 'Login' : 'Register' }}</button>
+    </form>
+  </div>
 </div>

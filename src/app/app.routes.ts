@@ -4,7 +4,7 @@ import { MemberComponent } from './modules/member/member.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { LoginComponent } from './modules/login/login.component';
-import { authGuard } from './guards/auth.guard'; 
+import { AuthGuard } from './guards/auth.guard'; 
 import { SettingsComponent } from './modules/settings/settings.component'; 
 import { PaymentComponent } from './modules/payment/payment.component';
 
@@ -16,7 +16,7 @@ export const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    canActivate: [authGuard], // Protect all children
+    canActivate: [AuthGuard], // Protect all children
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },

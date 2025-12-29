@@ -91,3 +91,13 @@
     }
   }
 }
+.toggle-text a {
+  color: #007bff; /* Bootstrap-like blue */
+  text-decoration: underline; /* optional */
+  cursor: pointer;
+}
+
+.toggle-text a:hover {
+  color: #0056b3; /* darker on hover */
+}
+

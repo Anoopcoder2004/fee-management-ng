@@ -13,7 +13,7 @@ import { AuthService } from '../../shared/service/auth-service.service';
 })
 export class LoginComponent {
   isLoginMode: boolean = true; // toggle between login/register
-  username: string = '';
+  email: string = '';
   password: string = '';
   showPassword: boolean = false;
   error: string = '';
@@ -30,14 +30,14 @@ export class LoginComponent {
   }
 
   login() {
-    this.authService.login(this.username, this.password).subscribe({
+    this.authService.login(this.email, this.password).subscribe({
       next: () => this.router.navigate(['/dashboard']),
-      error: () => (this.error = 'Invalid username or password')
+      error: () => (this.error = 'Invalid email or password')
     });
   }
 
   register() {
-    this.authService.register(this.username, this.password).subscribe({
+    this.authService.register(this.email, this.password).subscribe({
       next: () => {
         alert('Registration successful!');
         this.toggleMode(); // switch to login mode after registration

@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-  private BASE_URL = 'https://fee-management-api.onrender.com/auth';
 
+  // Use environment variable for base URL
+  private BASE_URL = `${environment.apiUrl}/auth`;
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string) {

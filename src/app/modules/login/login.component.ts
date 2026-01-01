@@ -13,31 +13,46 @@ import { AuthService } from '../../shared/service/auth-service.service';
 })
 export class LoginComponent {
   isLoginMode: boolean = true; // toggle between login/register
-  username: string = '';
+  email: string = '';
   password: string = '';
   showPassword: boolean = false;
   error: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   toggleMode() {
     this.isLoginMode = !this.isLoginMode;
     this.error = '';
   }
-
   togglePassword() {
     this.showPassword = !this.showPassword;
   }
-
   login() {
-    this.authService.login(this.username, this.password).subscribe({
-      next: () => this.router.navigate(['/dashboard']),
-      error: () => (this.error = 'Invalid username or password')
+    this.error = ''; // clear old error
+
+    this.authService.login(this.email, this.password).subscribe({
+      next: (res: any) => {
+        console.log('Login response:', res); // 🔹 debug backend response
+
+        // If backend sends a success field or status
+        if (res?.message === 'Login successful' || res?.success) {
+          this.router.navigate(['/dashboard']);
+        } else {
+          this.error = 'Invalid email or password';
+        }
+      },
+      error: (err) => {
+        console.error('Login error:', err); // 🔹 debug error
+        this.error = 'Invalid email or password';
+      }
     });
   }
 
   register() {
-    this.authService.register(this.username, this.password).subscribe({
+    this.authService.register(this.email, this.password).subscribe({
       next: () => {
         alert('Registration successful!');
         this.toggleMode(); // switch to login mode after registration

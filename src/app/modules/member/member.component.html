@@ -8,21 +8,19 @@
     <table class="table-wrapper">
       <thead>
         <tr>
+          <th>ID</th>
           <th>Client Name</th>
-          <th>Plan</th>
-          <th>Status</th>
+          <th>Phone</th>
+          <th>gender</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Rahul Nair</td>
-          <td>3 Months</td>
-          <td><span class="status paid">Paid</span></td>
-        </tr>
-        <tr>
-          <td>Arun Menon</td>
-          <td>1 Month</td>
-          <td><span class="status due">Due</span></td>
+        <tr *ngFor="let data of tableData">
+          <td>{{data.id}}</td>
+          <td>{{data.name}}</td>
+          <td>{{data.phone}}</td>
+          <td>{{data.gender}}</td>
+
         </tr>
       </tbody>
     </table>

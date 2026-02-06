@@ -14,6 +14,7 @@ export class ClientService {
   getClient(){
     return this.http.get(`${this.baseUrl}/api/clients`);
   }
-
-
+  addClient(clientData: any){
+    return this.http.post(`${this.baseUrl}/api/clients/add-client`, clientData);
+  }
 }

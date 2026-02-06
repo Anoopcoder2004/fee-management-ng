@@ -3,15 +3,21 @@
     <h3>Fee Summary</h3>
 
     <!-- Add Member Button -->
-    <button class="btn btn-black mb-2 " (click)="openModal()">Add Member</button>
+    <button class="btn btn-black mb-2" (click)="openModal()">Add Member</button>
 
+    <!-- Client Table -->
     <table class="table-wrapper">
       <thead>
         <tr>
           <th>ID</th>
           <th>Client Name</th>
           <th>Phone</th>
-          <th>gender</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Plan</th>
+          <th>Join Date</th>
+          <th>Fee Paid</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
@@ -19,8 +25,12 @@
           <td>{{data.id}}</td>
           <td>{{data.name}}</td>
           <td>{{data.phone}}</td>
+          <td>{{data.email}}</td>
           <td>{{data.gender}}</td>
-
+          <td>{{data.plan}}</td>
+          <td>{{data.joinDate}}</td>
+          <td>{{data.feePaid}}</td>
+          <td>{{data.status}}</td>
         </tr>
       </tbody>
     </table>
@@ -34,21 +44,68 @@
 
     <h2>Add Member</h2>
 
-    <form>
+    <form [formGroup]="addClientForm" (ngSubmit)="submitClient()">
+
+      <!-- Name -->
       <label>Client Name</label>
-      <input type="text" placeholder="Enter name">
+      <input type="text" placeholder="Enter name" formControlName="name">
+      <div class="error" *ngIf="addClientForm.get('name')?.invalid && addClientForm.get('name')?.touched">
+        Name is required
+      </div>
 
-      <label>Plan</label>
-      <select>
-        <option>1 Month</option>
-        <option>3 Months</option>
-        <option>6 Months</option>
+      <!-- Phone -->
+      <label>Phone</label>
+      <input type="text" placeholder="Enter phone" formControlName="phone">
+      <div class="error" *ngIf="addClientForm.get('phone')?.invalid && addClientForm.get('phone')?.touched">
+        Valid phone number is required
+      </div>
+
+      <!-- Email -->
+      <label>Email</label>
+      <input type="email" placeholder="Enter email" formControlName="email">
+      <div class="error" *ngIf="addClientForm.get('email')?.invalid && addClientForm.get('email')?.touched">
+        Enter a valid email
+      </div>
+
+      <!-- Gender -->
+      <label>Gender</label>
+      <select formControlName="gender">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
       </select>
+      <div class="error" *ngIf="addClientForm.get('gender')?.invalid && addClientForm.get('gender')?.touched">
+        Gender is required
+      </div>
 
+      <!-- Plan -->
+      <label>Plan</label>
+      <select formControlName="plan">
+        <option value="">Select Plan</option>
+        <option value="1 Month">1 Month</option>
+        <option value="3 Months">3 Months</option>
+        <option value="6 Months">6 Months</option>
+      </select>
+      <div class="error" *ngIf="addClientForm.get('plan')?.invalid && addClientForm.get('plan')?.touched">
+        Plan is required
+      </div>
 
+      <!-- Join Date -->
+      <label>Join Date</label>
+      <input type="date" formControlName="joinDate">
 
-      <button type="submit" class="submit-btn">Save</button>
+      <!-- Fee Paid (auto-calculated, disabled) -->
+      <label>Fee Paid</label>
+      <input type="number" formControlName="feePaid" [disabled]="true">
+
+      <!-- Status (hidden or default) -->
+      <input type="hidden" formControlName="status">
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn" [disabled]="submitting || addClientForm.invalid">
+        {{ submitting ? 'Adding...' : 'Save' }}
+      </button>
     </form>
   </div>
 </div>
-

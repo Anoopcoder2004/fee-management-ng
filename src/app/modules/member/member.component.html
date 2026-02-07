@@ -10,8 +10,35 @@
       <thead>
         <tr>
           <th>ID</th>
-          <th>Client Name</th>
-          <th>Phone</th>
+          <th>Client Name      <i 
+        class="bi bi-search search-icon"
+        (click)="toggleNameSearch()">
+      </i>
+     <div *ngIf="showNameSearch" class="header-search-box">
+        <input
+          type="text"
+          class="form-control form-control-sm"
+          placeholder="Search name..."
+          [formControl]="nameSearchControl"
+        />
+      </div>
+    </th>
+          <th>Phone
+             <i 
+        class="bi bi-search search-icon"
+        (click)="togglePhoneSearch()"
+        data-testid="phone-search-icon">
+      </i>
+
+      <div *ngIf="showPhoneSearch" class="header-search-box">
+        <input
+          type="text"
+          class="form-control form-control-sm"
+          placeholder="Search phone..."
+          [formControl]="phoneSearchControl"
+        />
+      </div>
+          </th>
           <th>Email</th>
           <th>Gender</th>
           <th>Plan</th>
